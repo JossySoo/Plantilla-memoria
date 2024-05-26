@@ -192,8 +192,8 @@
 \RequirePackage{siunitx} % Required for \SI commands
 
 \RequirePackage{graphicx} % Required to include images
+\RequirePackage{lscape}
 \graphicspath{{Figures/}{./}} % Specifies where to look for included images
-
 \RequirePackage{booktabs} % Required for better table rules
 
 \RequirePackage{caption} % Required for customising the captions
@@ -337,9 +337,6 @@ KOMA-script documentation for details.}]{fancyhdr}
 \thispagestyle{\blank@p@gestyle}
 \newpage
 \if@twocolumn\hbox{}\newpage\fi\fi\fi}
-
-
-
 
 
 

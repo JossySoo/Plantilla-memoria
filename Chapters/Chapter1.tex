@@ -19,72 +19,76 @@
 
 %\section{Introducción}
 
+En este capítulo se brindará mayor detalle sobre la importancia del trabajo realizado y sus beneficios para el Banco de Crédito del Perú. Adicionalmente, se especificará cuál es el objetivo y el alcance del proyecto. Finalmente, se brindará un breve resumen de los avances tecnológicos más recientes en inteligencia artificial generativa y los retos implicados en su uso.
+
 %----------------------------------------------------------------------------------------
 \section{Motivación}
 
-Uno de los principales medios de comunicación dentro del Banco de Crédito del Perú es el email. Dentro de la organización existen varios equipos que usan esta herramienta para comunicar campañas a los clientes, promociones, brindar consejos financieros, entre otros objetivos diversos por áreas. Sin embargo, el proceso de creación de los emails maquetados puede tomar entre 5 a 8 días hábiles, y el equipo que recibe estos pedidos tiene capacidad limitada, por lo que se debe priorizar y rechazar algunas solicitudes. Adicionalmente, estos emails son estáticos, difíciles de personalizar por la carga que conlleva realizar artes diferentes. Esto dificulta comunicar a los clientes de forma oportuna, con la frecuencia deseada y con mayor personalización. Además, vuelve complejo el realizar experimentos y campañas que exigen el uso de artes variados por diferentes grupos de clientes, o la actualización continua del contenido de los mails. 
+Uno de los principales medios de comunicación dentro del Banco de Crédito del Perú (BCP) es el email. Dentro de la organización existen varios equipos que usan esta herramienta para comunicar campañas a los clientes, promociones, brindar consejos financieros, entre otros objetivos diversos por áreas. Sin embargo, el proceso de creación de los emails maquetados puede tomar entre 5 a 8 días hábiles, y el equipo que recibe estos pedidos tiene capacidad limitada, por lo que se deben priorizar y rechazar algunas solicitudes. Adicionalmente, estos emails son estáticos y difíciles de personalizar por la carga que conlleva realizar artes diferentes. Esto dificulta comunicar a los clientes de forma oportuna, con la frecuencia deseada y con mayor personalización. Además, vuelve complejo el realizar experimentos y campañas que exigen el uso de bocetos variados para diferentes grupos de clientes, o la actualización continua del contenido de los correos electrónicos. 
 
-En la figura 1, se resumen los pasos para la creación de un correo electrónico tal cual se realizan en la empresa previo al desarrollo de este proyecto. Como se puede observar, es un flujo largo que tiene muchas oportunidades de optimización.
+En la figura~\ref{fig:procesoEmail}, se resumen los pasos para la creación de un correo electrónico tal cual se realizan en la empresa previo al desarrollo de este trabajo. 
 
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=1\textwidth]{./Figures/Diagrama1_Creacion_Emails.png}
+\begin{landscape}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{./Figures/Diagrama1_Creacion_Emails.png}
 \caption{Proceso de creación de emails para clientes.}
-\label{fig:diagBloques}
+\label{fig:procesoEmail}
 \end{figure}
+\end{landscape}
 
-Sin embargo, gracias al avance de la inteligencia artificial (IA) generativa este proceso se puede reducir a unos pocos minutos, logrando que ya no sea un cuello de botella para las campañas comerciales y comunicación relacional hacia los clientes. Además, se liberará de carga al equipo de diseño de tal forma que pueda enfocarse en actividades más creativas y que generen más valor a la organización. Esto implicará tanto ahorro de costos para la empresa como incremento en ventas gracias a la mejora en la comunicación comercial.
+Como se puede observar, es un flujo largo que tiene muchas oportunidades de optimización. Este proceso inicia con la solicitud de creación de un email por parte de algún analista de negocio, el cual crea un \textit{brief} que es un documento que incluye el objetivo del correo, el contenido, público objetivo y otras instrucciones necesarias para su desarrollo. El equipo de diseño revisa este archivo y crea inicialmente un borrador del texto que se incluirá en el email. Tras su aprobación, recién inicia la maquetación del correo electrónico en HTML. Entre estos pasos, existen varias idas y vueltas entre ambos equipos para hacer correcciones en los bocetos que le toman al equipo de diseño varios días.
+
+Sin embargo, gracias al avance de la inteligencia artificial (IA) generativa este proceso se puede reducir a unos pocos minutos, lo cual hace posible que las campañas comerciales y comunicación relacional sean enviadas a tiempo a los clientes. Además, se liberará de carga al equipo de diseño de tal forma que pueda enfocarse en actividades más creativas y que generen más valor a la organización. Esto implicará tanto ahorro de costos para la empresa como incremento en ventas gracias a la mejora en la comunicación comercial.
 
 %----------------------------------------------------------------------------------------
 
 \section{Objetivos y alcance}
 
-El objetivo del trabajo propuesto es agilizar el proceso de creación de emails del Banco de Crédito del Perú y minimizar el esfuerzo humano mediante el uso de inteligencia artificial generativa. Estos emails deben crearse respetando los lineamientos de marca de la empresa, el estilo que corresponde a cada segmento de clientes del banco y deben aplicar correctamente la terminología bancaria.
+El objetivo del trabajo propuesto es agilizar el proceso de creación de emails del Banco de Crédito del Perú y minimizar el esfuerzo humano mediante el uso de inteligencia artificial generativa. Estos correos deben crearse respetando los lineamientos de marca de la empresa, el estilo que corresponde a cada segmento de clientes del banco y deben aplicar correctamente la terminología bancaria.
 
 \subsection{Alcance}
 
-Este proyecto incluye una solución tecnológica en base a inteligencia artificial que pueda entender la información escrita en lenguaje natural brindada dentro de un brief y, a partir de este, generar un email compuesto por texto e imágenes. Este email puede ser previsualizado por el usuario para permitir su revisión y aprobación. Una vez aprobado el diseño, el output final que se comparte al usuario es una carpeta con el archivo HTML y las imágenes finales.
+Este trabajo incluye una solución tecnológica en base a inteligencia artificial que pueda entender la información escrita en lenguaje natural brindada dentro de un \textit{brief} y, a partir de este, generar un email compuesto por texto e imágenes. Este email puede ser previsualizado por el usuario para permitir su revisión y aprobación. Una vez aprobado el diseño, el \textit{output} final que se comparte al solicitante es una carpeta con el archivo HTML y las imágenes necesarias.
 
-Dentro de la solución brindada se están incluyendo las funcionalidades para poder pedir modificaciones sobre el HTML ya generado y poder adaptar el estilo a segmentos de clientes Bex y Enalta. Adicionalmente, se ha desarrollado una interfaz sencilla para que los usuarios no técnicos puedan usar el modelo.
+Dentro de la solución brindada se incluyen las funcionalidades para poder pedir modificaciones sobre el documento HTML ya generado y poder adaptar el estilo a segmentos de clientes Bex y Enalta. Adicionalmente, se ha desarrollado una interfaz sencilla para que los usuarios no técnicos puedan usar el modelo.
 
-El presente proyecto no incluye ninguna conexión directa con Adobe Campaing. Tampoco está dentro del alcance de este proyecto la generación de emails para clientes corporativos del banco o correos con contenido de productos para empresas. Adicionalmente, quedan pendientes las siguientes funcionalidades para futuros desarrollos: poder incluir gifs dentro del email, adaptar el estilo a segmentos de clientes Enalta y Banca Privada; poder personalizar secciones del mail (como frases o imágenes) según clusters de clientes específicos; entre otras funcionalidades.
+El presente trabajo no incluye ninguna conexión directa con Adobe Campaign, que es la herramienta utilizada por la empresa para el envío de correos electrónicos. Tampoco está dentro del alcance la generación de emails para clientes corporativos del banco o correos con contenido de productos para empresas. Además, quedan pendientes las siguientes funcionalidades para futuros desarrollos: poder incluir archivos \textit{GIF (Graphic Interchange Format)} dentro del email, adaptar el estilo a segmentos de clientes Enalta y Banca Privada; poder personalizar secciones del mail (como frases o imágenes) según \textit{clusters} de clientes específicos, entre otras funcionalidades.
 
 %----------------------------------------------------------------------------------------
 
 \section{Estado del arte}
 
-El desarrollo de la inteligencia artificial generativa ha sido rápido y disruptivo desde la publicación del influyente paper `Attention is All You Need' en 2017. Este paper introdujo los transformadores, una arquitectura que ha revolucionado la forma en que las máquinas entienden y generan lenguaje humano y otros tipos de datos. Este método se basa exclusivamente en mecanismos de atención, prescindiendo de las recurrentes en el procesamiento del lenguaje natural (NLP) \citep{Vaswani2017}. Esto permitió a los modelos aprender relaciones complejas en datos de secuencia con mayor eficacia y eficiencia.
+El desarrollo de la inteligencia artificial generativa ha sido rápido y disruptivo desde la publicación del influyente \textit{paper} \textit{Attention is All You Need} \citep{Vaswani2017} en 2017. En este se introdujo los transformadores, una arquitectura que ha revolucionado la forma en que las máquinas entienden y generan lenguaje humano y otros tipos de datos. Este método se basa exclusivamente en mecanismos de atención y prescinde de operaciones recurrentes en el procesamiento del lenguaje natural (NLP) \citep{Vaswani2017}. Esto permite a los modelos aprender relaciones complejas en datos de secuencia con mayor eficacia y eficiencia.
 
-Gracias a eso, en 2018, casi simultáneamente, OpenAI y Google lanzaron GPT y BERT, respectivamente. Estos modelos basados en transformadores mostraron capacidades superiores en muchas tareas de procesamiento del lenguaje natural (NLP), desde la comprensión hasta la generación de texto. GPT, en particular, fue diseñado para la generación de texto \citep{Radford2018}, mientras que BERT se centró en mejorar la comprensión del contexto del lenguaje \citep{Devlin2018}.
+Gracias a eso, en 2018, casi simultáneamente, OpenAI y Google lanzaron GPT \citep{Radford2018} y BERT \citep{Devlin2018}, respectivamente. Estos modelos basados en transformadores mostraron capacidades superiores en muchas tareas de procesamiento del lenguaje natural. GPT, en particular, fue diseñado para la generación de texto \citep{Radford2018}, mientras que BERT se centró en mejorar la comprensión del contexto del lenguaje \citep{Devlin2018}.
 
-Desde 2019, OpenAI continuó desarrollando y mejorando las versiones de GPT, incluyendo GPT-2 y GPT-3, el último de los cuales fue lanzado en 2020. Estos modelos fueron utilizados en diversas aplicaciones de chat por desarrolladores, aunque todavía no existía un producto específicamente diseñado y accesible para el público general para interactuar en forma de chat. La versión de ChatGPT que se popularizó ampliamente, con una interfaz gráfica amigable para el usuario final, fue lanzada por OpenAI en noviembre de 2022. Esta versión fue específicamente optimizada para interacciones en forma de diálogo y diseñada para ser segura y fácil de usar, facilitando su accesibilidad y uso masivo por parte del público general.\citep{OpenAI2022ChatGPT}
+Desde 2019, OpenAI ha seguido desarrollando y perfeccionando las versiones de GPT, que incluyen GPT-2 y GPT-3, este último lanzado en 2020. Estos modelos fueron utilizados en diversas aplicaciones de chat por desarrolladores, aunque todavía no existía un producto específicamente diseñado y accesible para el público general para interactuar en forma de chat. La versión de ChatGPT que se popularizó ampliamente, con una interfaz gráfica amigable para el usuario final, fue lanzada por OpenAI en noviembre de 2022. Esta versión fue específicamente optimizada para interacciones en forma de diálogo y diseñada para ser segura, fácil de usar y accesible para el uso masivo del público general \citep{OpenAI2022ChatGPT}.
 
-Los modelos de lenguaje de gran escala como GPT-3, lanzados durante este período, demostraron capacidades asombrosas, generando texto que puede ser indistinguible del escrito por humanos. El interés y la utilización de estos modelos se masificaron rápidamente, impulsados por su aplicación en una amplia gama de industrias, desde asistentes virtuales hasta herramientas de creación de contenido.\citep{V7Labs2023}
+Los modelos de lenguaje de gran escala como GPT-3, lanzados durante este período, demostraron capacidades asombrosas como la generación de texto que puede ser indistinguible del escrito por humanos. El interés y la utilización de estos modelos se masificaron rápidamente, impulsados por su aplicación en una amplia gama de industrias, desde asistentes virtuales hasta herramientas de creación de contenido \citep{V7Labs2023}.
 
-Entre las aplicaciones más interesante de estos modelos están las herramientas de generación de código como GitHub Copilot, que utilizan variantes de GPT-3 para ofrecer asistencia en la codificación, ayudando a los desarrolladores a escribir código más rápido y con menos errores. Estas herramientas pueden autocompletar líneas de código, sugerir implementaciones completas de funciones y proporcionar ejemplos de código en tiempo real. \citep{GitHubCopilot2023}
+Entre las aplicaciones más interesantes de estos modelos están las herramientas de generación de código como GitHub Copilot \citep{GitHubCopilot2023}, que utilizan variantes de GPT-3 para ayudar a los desarrolladores a escribir código más rápido y con menos errores. Estas herramientas pueden autocompletar líneas de código, sugerir implementaciones completas de funciones y proporcionar ejemplos de código en tiempo real \citep{GitHubCopilot2023}. 
 
-Por otro lado, en el campo de la generación de imágenes, modelos como DALL-E, Midjourney, Stability AI y otros basados en técnicas de difusión y GANs han mostrado cómo la IA puede crear imágenes artísticas y realistas a partir de descripciones textuales, revolucionando campos como el diseño gráfico y la moda. \citep{BattleOfCreativity2024}
+Por otro lado, en el campo de la generación de imágenes, modelos como DALL-E, Midjourney, Stability AI y otros basados en técnicas de difusión y GANs han mostrado cómo la IA puede crear imágenes artísticas y realistas a partir de descripciones textuales, revolucionando campos como el diseño gráfico y la moda \citep{BattleOfCreativity2024}.
 
 
 
-Estos avances están cambiando la manera en que trabajamos, permitiendo mayor eficiencia y nuevas formas de creatividad. La IA generativa sigue evolucionando, prometiendo aún más aplicaciones y mejoras en el futuro. Sin embargo, pese a sus impresionantes capacidades, no está exenta de desafíos y limitaciones. 
-
-Algunos de los defectos más notables que se deben considerar al aplicar inteligencia artificial generativa en diversos desarrollos son los siguientes \citep{TowardsAI2024}:
+Estos avances están cambiando la manera de trabajar, ya que permiten mayor eficiencia y nuevas formas de creatividad. La IA generativa sigue evolucionando, prometiendo aún más aplicaciones y mejoras en el futuro. Sin embargo, pese a sus impresionantes capacidades, no está exenta de desafíos y limitaciones. Algunos de los defectos más notables que se deben considerar al aplicarla en diversos desarrollos, son los siguientes \citep{TowardsAI2024}:
 
 \begin{itemize}
-    \item \textbf{Sensibilidad a los Prompts:} Los modelos generativos son altamente sensibles a la forma en que se estructuran los prompts o instrucciones. Pequeñas variaciones en el texto pueden llevar a resultados significativamente diferentes. Esto requiere que los usuarios a menudo tengan que experimentar con diferentes formulaciones de prompts para alcanzar el resultado deseado.
-    \item \textbf{Inconsistencias y Errores Fácticos:} Los modelos pueden generar información que es inconsistente o incluso incorrecta. Esto es especialmente problemático en aplicaciones que requieren alta precisión factual, como en el ámbito médico o jurídico.
-    \item \textbf{Sesgos en los Datos:} Los modelos generativos aprenden de grandes volúmenes de datos y pueden heredar y perpetuar los sesgos presentes en esos datos. Esto puede resultar en respuestas sesgadas o injustas, particularmente en contextos sensibles como la contratación de personal o la toma de decisiones judiciales.
+    \item Sensibilidad a los \textit{prompts}: Los modelos generativos son altamente sensibles a la forma en que se estructuran los \textit{prompts} o instrucciones. Pequeñas variaciones en el texto pueden llevar a resultados significativamente diferentes. Esto requiere que los usuarios a menudo tengan que experimentar con diferentes formulaciones de \textit{prompts} para alcanzar el resultado deseado.
+    \item Inconsistencias y errores fácticos: Los modelos pueden generar información que es inconsistente o incluso incorrecta. Esto es especialmente problemático en aplicaciones que requieren alta precisión factual, como en el ámbito médico o jurídico.
+    \item Sesgos en los datos: Los modelos generativos aprenden de grandes volúmenes de datos y pueden heredar y perpetuar los sesgos presentes en esos datos. Esto puede resultar en respuestas sesgadas o injustas, particularmente en contextos sensibles como la contratación de personal o la toma de decisiones judiciales.
 \end{itemize}
 
 Para mitigar estos problemas, se utilizan varias herramientas y técnicas  \citep{TowardsAI2024}:
 
 \begin{itemize}
-    \item \textbf{Ajuste Fino y Supervisión:} Ajustar modelos a conjuntos de datos específicos o supervisar y corregir sus salidas manualmente puede ayudar a mejorar la precisión y reducir errores.
-    \item \textbf{Desarrollo de Prompts Efectivos:} La creación de guías y herramientas para el desarrollo de prompts más efectivos ayuda a los usuarios a interactuar de manera más eficiente con la IA, reduciendo la necesidad de múltiples intentos.\citep{HatchWorks2024} \citep{arXiv2024Prompt}
-    \item \textbf{Tecnologías de Detección y Mitigación de Sesgos:} Se están desarrollando tecnologías específicas para detectar y mitigar sesgos en los modelos de IA, asegurando que los resultados sean más justos y equitativos.
-    \item \textbf{Pruebas Rigurosas:} Implementar pruebas extensas en diversos escenarios puede ayudar a identificar y corregir errores antes de que los modelos se desplieguen en entornos de producción.
-    \item \textbf{Interfaz de Usuario Intuitiva:} Diseñar interfaces que guíen a los usuarios en la formulación de prompts y en la interpretación de los resultados puede mejorar significativamente la experiencia del usuario y la calidad de los resultados generados.
+    \item Ajuste fino y supervisión: ajustar modelos a conjuntos de datos específicos o supervisar y corregir sus salidas manualmente puede ayudar a mejorar la precisión y reducir errores.
+    \item Desarrollo de \textit{prompts} efectivos: la creación de guías y herramientas para el desarrollo de \textit{prompts} más efectivos ayuda a los usuarios a interactuar de manera más eficiente con la IA y reduce la necesidad de múltiples intentos \citep{HatchWorks2024} \citep{arXiv2024Prompt}.
+    \item Tecnologías de detección y mitigación de sesgos: se están desarrollando tecnologías específicas para detectar y mitigar sesgos en los modelos de IA, asegurando que los resultados sean más justos y equitativos.
+    \item Pruebas rigurosas: implementar pruebas extensas en diversos escenarios puede ayudar a identificar y corregir errores antes de que los modelos se desplieguen en entornos de producción.
+    \item Interfaz de usuario intuitiva: diseñar interfaces que guíen a los usuarios en la formulación de \textit{prompts} y en la interpretación de los resultados puede mejorar significativamente la experiencia del usuario y la calidad de los resultados generados.
 \end{itemize}
 
-En el presente trabajo aplicaremos estos nuevos modelos disruptivos para crear una solución al problema planteado tomando en cuenta los desafíos que conlleva el uso de estas tecnologías y experimentando para poder reducir lo máximo posible sus limitantes.
+En el presente trabajo se aplicaron estos nuevos modelos disruptivos para crear una solución al problema planteado tomando en cuenta los desafíos que conlleva el uso de estas tecnologías y experimentando para poder reducir lo máximo posible sus limitantes.
