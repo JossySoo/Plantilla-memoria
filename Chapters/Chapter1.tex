@@ -19,7 +19,7 @@
 
 %\section{Introducción}
 
-En este capítulo se brindará mayor detalle sobre la importancia del trabajo realizado y sus beneficios para el Banco de Crédito del Perú. Adicionalmente, se especificará cuál es el objetivo y el alcance del proyecto. Finalmente, se brindará un breve resumen de los avances tecnológicos más recientes en inteligencia artificial generativa y los retos implicados en su uso.
+En este capítulo se brinda mayor detalle sobre la importancia del trabajo realizado y sus beneficios para el Banco de Crédito del Perú. Adicionalmente, se especifica cuál es el objetivo y el alcance del proyecto. Finalmente, se brinda un breve resumen de los avances tecnológicos más recientes en inteligencia artificial generativa y los retos implicados en su uso.
 
 %----------------------------------------------------------------------------------------
 \section{Motivación}
@@ -53,7 +53,14 @@ Este trabajo incluye una solución tecnológica en base a inteligencia artificia
 
 Dentro de la solución brindada se incluyen las funcionalidades para poder pedir modificaciones sobre el documento HTML ya generado y poder adaptar el estilo a segmentos de clientes Bex y Enalta. Adicionalmente, se ha desarrollado una interfaz sencilla para que los usuarios no técnicos puedan usar el modelo.
 
-El presente trabajo no incluye ninguna conexión directa con Adobe Campaign, que es la herramienta utilizada por la empresa para el envío de correos electrónicos. Tampoco está dentro del alcance la generación de emails para clientes corporativos del banco o correos con contenido de productos para empresas. Además, quedan pendientes las siguientes funcionalidades para futuros desarrollos: poder incluir archivos \textit{GIF (Graphic Interchange Format)} dentro del email, adaptar el estilo a segmentos de clientes Enalta y Banca Privada; poder personalizar secciones del mail (como frases o imágenes) según \textit{clusters} de clientes específicos, entre otras funcionalidades.
+El presente trabajo no incluye ninguna conexión directa con Adobe Campaign, que es la herramienta utilizada por la empresa para el envío de correos electrónicos. Tampoco está dentro del alcance la generación de emails para clientes corporativos del banco o correos con contenido de productos para empresas. Además, quedan pendientes las siguientes funcionalidades para futuros desarrollos: 
+
+\begin{itemize}
+    \item Poder incluir archivos \textit{GIF (Graphic Interchange Format)} dentro del email.
+    \item Adaptar el estilo a segmentos de clientes Enalta y Banca Privada.
+    \item Poder personalizar secciones del mail (como frases o imágenes) según \textit{clusters} de clientes específicos.
+    \item Entre otras funcionalidades.
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 
@@ -63,15 +70,13 @@ El desarrollo de la inteligencia artificial generativa ha sido rápido y disrupt
 
 Gracias a eso, en 2018, casi simultáneamente, OpenAI y Google lanzaron GPT \citep{Radford2018} y BERT \citep{Devlin2018}, respectivamente. Estos modelos basados en transformadores mostraron capacidades superiores en muchas tareas de procesamiento del lenguaje natural. GPT, en particular, fue diseñado para la generación de texto \citep{Radford2018}, mientras que BERT se centró en mejorar la comprensión del contexto del lenguaje \citep{Devlin2018}.
 
-Desde 2019, OpenAI ha seguido desarrollando y perfeccionando las versiones de GPT, que incluyen GPT-2 y GPT-3, este último lanzado en 2020. Estos modelos fueron utilizados en diversas aplicaciones de chat por desarrolladores, aunque todavía no existía un producto específicamente diseñado y accesible para el público general para interactuar en forma de chat. La versión de ChatGPT que se popularizó ampliamente, con una interfaz gráfica amigable para el usuario final, fue lanzada por OpenAI en noviembre de 2022. Esta versión fue específicamente optimizada para interacciones en forma de diálogo y diseñada para ser segura, fácil de usar y accesible para el uso masivo del público general \citep{OpenAI2022ChatGPT}.
+Desde 2019, OpenAI ha seguido desarrollando y perfeccionando las versiones de GPT, que incluyen GPT-2 y GPT-3, este último lanzado en 2020. En sus inicios, estos modelos fueron utilizados principalmente por desarrolladores, ya que todavía no existía un producto diseñado para el público general. La versión de ChatGPT que se popularizó ampliamente, con una interfaz gráfica amigable para el usuario final, fue lanzada por OpenAI en noviembre de 2022. Esta versión fue específicamente optimizada para interacciones en forma de diálogo y diseñada para ser segura, fácil de usar y accesible para el uso masivo \citep{OpenAI2022ChatGPT}.
 
 Los modelos de lenguaje de gran escala como GPT-3, lanzados durante este período, demostraron capacidades asombrosas como la generación de texto que puede ser indistinguible del escrito por humanos. El interés y la utilización de estos modelos se masificaron rápidamente, impulsados por su aplicación en una amplia gama de industrias, desde asistentes virtuales hasta herramientas de creación de contenido \citep{V7Labs2023}.
 
-Entre las aplicaciones más interesantes de estos modelos están las herramientas de generación de código como GitHub Copilot \citep{GitHubCopilot2023}, que utilizan variantes de GPT-3 para ayudar a los desarrolladores a escribir código más rápido y con menos errores. Estas herramientas pueden autocompletar líneas de código, sugerir implementaciones completas de funciones y proporcionar ejemplos de código en tiempo real \citep{GitHubCopilot2023}. 
+Entre las aplicaciones más interesantes de estos modelos están las herramientas de generación de código como GitHub Copilot \citep{GitHubCopilot2023}. Estas utilizan variantes de GPT-3 para ayudar a los desarrolladores a escribir código más rápido y con menos errores. Entre sus capacidades están autocompletar líneas de código, sugerir implementaciones completas de funciones y proporcionar ejemplos de código en tiempo real \citep{GitHubCopilot2023}. 
 
-Por otro lado, en el campo de la generación de imágenes, modelos como DALL-E, Midjourney, Stability AI y otros basados en técnicas de difusión y GANs han mostrado cómo la IA puede crear imágenes artísticas y realistas a partir de descripciones textuales, revolucionando campos como el diseño gráfico y la moda \citep{BattleOfCreativity2024}.
-
-
+Por otro lado, en el campo de la generación de imágenes han surgido modelos basados en técnicas de difusión y GANs como DALL-E, Midjourney y Stability AI. Estos han mostrado cómo la IA puede crear imágenes artísticas y realistas a partir de descripciones textuales, revolucionando campos como el diseño gráfico y la moda \citep{BattleOfCreativity2024}.
 
 Estos avances están cambiando la manera de trabajar, ya que permiten mayor eficiencia y nuevas formas de creatividad. La IA generativa sigue evolucionando, prometiendo aún más aplicaciones y mejoras en el futuro. Sin embargo, pese a sus impresionantes capacidades, no está exenta de desafíos y limitaciones. Algunos de los defectos más notables que se deben considerar al aplicarla en diversos desarrollos, son los siguientes \citep{TowardsAI2024}:
 
@@ -91,4 +96,4 @@ Para mitigar estos problemas, se utilizan varias herramientas y técnicas  \cite
     \item Interfaz de usuario intuitiva: diseñar interfaces que guíen a los usuarios en la formulación de \textit{prompts} y en la interpretación de los resultados puede mejorar significativamente la experiencia del usuario y la calidad de los resultados generados.
 \end{itemize}
 
-En el presente trabajo se aplicaron estos nuevos modelos disruptivos para crear una solución al problema planteado tomando en cuenta los desafíos que conlleva el uso de estas tecnologías y experimentando para poder reducir lo máximo posible sus limitantes.
+En el presente trabajo se aplican estos nuevos modelos disruptivos para crear una solución al problema planteado y se toma en cuenta los desafíos que conlleva el uso de estas tecnologías para poder reducir lo máximo posible sus limitantes.
