@@ -10,25 +10,51 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
+En este capítulo se resaltan las conclusiones más importantes y las recomendaciones a seguir para mejorar la solución planteada en este trabajo.
 
 \section{Conclusiones generales }
 
-La idea de esta sección es resaltar cuáles son los principales aportes del trabajo realizado y cómo se podría continuar. Debe ser especialmente breve y concisa. Es buena idea usar un listado para enumerar los logros obtenidos.
-
-Algunas preguntas que pueden servir para completar este capítulo:
+Luego de haber revisado el desarrollo de este trabajo, se pueden realizar las siguientes conclusiones:
 
 \begin{itemize}
-\item ¿Cuál es el grado de cumplimiento de los requerimientos?
-\item ¿Cuán fielmente se puedo seguir la planificación original (cronograma incluido)?
-\item ¿Se manifestó algunos de los riesgos identificados en la planificación? ¿Fue efectivo el plan de mitigación? ¿Se debió aplicar alguna otra acción no contemplada previamente?
-\item Si se debieron hacer modificaciones a lo planificado ¿Cuáles fueron las causas y los efectos?
-\item ¿Qué técnicas resultaron útiles para el desarrollo del proyecto y cuáles no tanto?
+\item En general, se lograron cumplir todos los requerimientos planteados en la planificación del proyecto. Se pudo crear una solución que genera emails en cuestión de minutos en el formato que el cliente solicitó, con una interfaz gráfica fácil de usar, incluso sin conocimiento técnico. En el aspecto de seguridad, si bien se está usando APIs de terceros, esta es una alternativa aceptada por el cliente.
+\item Ya que la inteligencia generativa está en un momento de constantes cambios, este trabajo se vio beneficiado por tener a disposición modelos fundacionales de muy buena calidad. Si bien esto exigió cambios en la planificación original y actualizaciones del desarrollo a mitad de camino, fue a favor del resultado final.
+\item Se manifestó el riesgo relacionado a no poder obtener ayuda de la empresa para recopilar grandes cantidades de emails. Sin embargo, finalmente se pudieron conseguir algunos ejemplos que bastaron para el desarrollo del trabajo ya que no fue necesario entrenar un modelo desde cero o realizar \textit{fine tuning}.
 \end{itemize}
-
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 \section{Próximos pasos}
 
-Acá se indica cómo se podría continuar el trabajo más adelante.
+Existen varias formas en las que se puede seguir mejorando este trabajo. A continuación se describen algunas de ellas.
+
+\begin{itemize}
+    \item Interfaz gráfica: para tener un producto más robusto, queda pendiente construir una página web con algún framework de desarrollo web como React o Angular. Adicionalmente, dentro de la interfaz se pueden incluir las siguientes funcionalidades:
+    \begin{itemize}
+        \item Tener un usuario donde se puedan almacenar los emails creados anteriormente.
+        \item Poder iterar sobre un email creado y modificarlo.
+        \item Tener campos para ingresar los textos legales.
+        \item Poder visualizar y seleccionar entre diferentes versiones de email o de imágenes de cabecera.
+        \item Crear varias versiones del email para cada segmento de clientes en una sola solicitud.
+    \end{itemize}
+    \item Generación de texto y HTML:
+    \begin{itemize}
+        \item Crear más clases de elementos opcionales. Por ejemplo: sección para incluir GIFs, botón de link, lista de descuentos, entre otras.
+        \item Incorporar las plantillas para otros segmentos de clientes como Enalta y Privada.
+        \item Probar una clase opcional libre en la que se deje a un agente LLM crear una parte del código HTML desde cero.
+        \item Utilizar RAG (\textit{retrieval augmented generation} por su sigla en inglés) \cite{NEURIPS2020_6b493230} o \textit{fine tuning} para enseñarle al modelo terminología bancaria propia de la empresa y conocimiento general sobre los productos y servicios que brinda.
+        \item Mantener actualizada la solución con los últimos modelos, ya sea de OpenAI, Google, Anthropic, Meta, u otro.
+        \item Implementar un modelo LLM en entorno privado para asegurar una máxima confidencialidad de la información.
+    \end{itemize}
+    \item Generación de imágenes: este constituye el aspecto que más errores puede ocasionar. Debido a esto, se sugieren varias formas de prevenirlos:
+    \begin{itemize}
+        \item Utilizar modelos de edición de imágenes para poder corregir detalles como manos mal dibujadas u objetos flotantes.
+        \item Generar varias imágenes y seleccionar las opciones más apropiadas con el uso de modelos de visión por computadora como GPT-4V \cite{openai2023gpt4v} o las versiones Omni de GPT.
+        \item Eliminar el paso de remoción de fondo usando la imagen completa como fondo e imprimiéndole encima el título del email.
+        \item Seguir experimentando con repositorios de contenido multimedia para algunos casos de uso. Por ejemplo, se puede tener un repositorio de GIFs para poder incorporar al email.
+        \item Mantener actualizada la aplicación con los últimos modelos para que los resultados se perfeccionen con el tiempo.
+    \end{itemize}
+\end{itemize}
+
+Existen muchas posibilidades para optimizar la solución planteada. Sin lugar a dudas la inteligencia artificial generativa tiene el potencial de agilizar no solo este proceso de creación de emails, sino que se puede extender a varios casos de uso de desarrollo de contenido. Experimentar y combinar diferentes técnicas, herramientas y modelos es lo que permitirá encontrar soluciones óptimas a problemas de automatización como este y sacarle el máximo provecho a estas tecnologías.

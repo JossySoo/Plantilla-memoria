@@ -1,7 +1,60 @@
 % Appendix A
 
-\chapter{Appendix Title Here} % Main appendix title
+\chapter{\textit{Prompt} de la herramienta \texttt{create\_email}} % Main appendix title
 
-\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+\label{AppendixA} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
 
-Write your Appendix content here.
+En este apéndice se puede observar el \textit{prompt} completo que le explica al agente de inteligencia artificial cómo usar la función \texttt{create\_email}.
+
+\section{\textit{Prompt} }
+
+`` Útil para crear el código html de un email en base al contenido que se le de en los inputs.
+
+    Inputs para la función create\_email: brindar un str con formato json que contenga estos elementos obligatorios (no incluir la palabra json en el input):
+        \begin{quote} 
+        segmento\_cliente: str, nombre\_imagen\_cabecera: str,titulo1: str,titulo2: str, parrafo\_inicial:str
+        \end{quote}
+        
+    También se puede optar por incluir elementos opcionales de esta lista:
+        \begin{quote} 
+        frase\_inicial:str, tcea\_trea:str, tasa:str, texto1\_tasa:str, texto2\_tasa:str , texto\_iconos:List[str], iconos:List[str], recuadro\_premio:List[str], recuadro\_lista:List[str], orden:List[str]
+        \end{quote}
+    A continuación la descripcion de los valores que deben ir en el contenido de los elementos:
+        \begin{quote} 
+        segmento\_cliente: Segmento de cliente al que va dirigido el email. Puede ser ``Bex'' o ``Consumo''.
+        
+        nombre\_imagen\_cabecera: Nombre de la imagen que se usará dentro de la cabecera y que se insertará en el código html. Debe contener la extensión .png.
+        
+        titulo1: Primera parte del título que irá en la cabecera. Es la primera línea que irá resaltada en negrito, debe tener la frase más importante.
+        
+        titulo2: Segunda parte del título que irá en la cabecera. Puede ser la continuación del titulo1, o una oración aparte. Debe ser una frase breve que no necesite comas.
+        
+        parrafo\_inicial: Es el primer párrafo en el cuerpo del email, debe contener la información más relevante que se quiere comunicar al cliente. Puedes agregar <br><br> entre lineas para dividir el párrafo si lo ves apropiado.
+
+
+        frase\_inicial: Una frase que irá antes del párrafo inicial. Es una sola oración de preferencia con signos de exclamación y va resaltada en azúl en el email. Que sea diferente al título y al párrafo inicial para que no suene redundante.
+        
+        tcea\_trea: En caso se especifique alguna tasa de interés que se deba incluir en el email, en este campo se debe especificar qué tipo de tasa es: ``TREA'' o ``TCEA''. Si no te brindan el valor de la tasa, no enviar este campo.
+        
+        tasa: colocar el valor de la TREA o TCEA brindada. Puede ser un valor o un rango. Ej1: "120%". Ej2:"5%-8%" Si no te brindan el valor de la tasa, no enviar este campo.
+        
+        texto1\_tasa: Incluir el descriptivo de la tasa enviada, tal cual te la dan sin ningún cambio. En caso se tenga TREA, enviar el descriptivo de la tasa mínima. En caso se tenga TCEA, enviar todo el descriptivo. Si no te brindan el valor de la tasa, no enviar este campo.
+        
+        texto2\_tasa: Solo usar en caso se tenga TREA. Enviar el descriptivo de la tasa máxima, tal cual te la dan sin ningún cambio. Si no te brindan el valor de la tasa, o si la tasa es TCEA, no usar este campo.
+        
+        texto\_iconos: lista de 4 características cortas que tiene el producto, servicio o promoción que se está comunicando y que se buscan mencionar al cliente. Deben ser hasta 3 palabras máximo cada texto y la primera palabra debe empezar con mayúscula.
+        
+        iconos: lista de los nombres de las imágenes de 4 iconos que acompañarán a cada elemento de la lista texto\_iconos. Se deben seleccionar de estas opciones de iconos: \{iconos\_img\}
+        
+        recuadro\_premio: lista de 3 líneas de texto. Sirve para resaltar un solo premio o beneficio que el cliente puede ganar. Este premio es descrito en 3 lineas de texto. La primera línea es la que se muestra más grande, y las otras 2 menos resaltadas. Ejemplo: [``¡Gana una Auto!",``Kia Sorrento 0 Km'',``Sorteo:15 de setiembre'']
+        
+        recuadro\_lista: sirve para enlistar una serie de instrucciones, pasos o recordatorios al cliente. El número de elementos es variable, pero el primer elemento siempre es el título de la lista. Este primer elemento puede ser ``Ten en cuenta:'', ``Recuerda que:'',``Sigue estos pasos:'' o algo similar. El resto de elementos son los textos a enlistar.
+        
+        orden: En caso se utilicen más de uno de estos elementos (iconos, recuadro\_premio, recuadro\_lista ), enviar el orden en el que deben aparecer. Ejemplo: orden= [``iconos'', ``recuadro\_premios", \\``recuadro\_lista'']
+        \end{quote}
+    Si te piden colocar algún dato como campo personalizado, envíalo en el contenido del elemento que corresponda con el dato entre estos símbolos:``\&lt; dato \&gt;''. No utilices los simbolos ``<>'' para este propósito.
+    
+    No menciones clientes Bex o Consumo en el contenido del mail, son palabras de uso interno.
+    
+    El input debe ser en formato json con los elementos elegidos debidamente separados con coma. Si olvidas alguna coma, se generará un error. No olvidar comas.
+    ''

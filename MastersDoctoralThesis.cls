@@ -225,6 +225,9 @@
     citecolor={blue!50!black},
     urlcolor={blue!80!black}]{hyperref}
 
+\RequirePackage{float}
+\RequirePackage{rotating}
+\RequirePackage{pdflscape}
 
 %\def\@title{Memoria técnica de proyecto de Trabajo Final} %TODO ver si se puede agregar el campo con el nombre del autor acá
 
